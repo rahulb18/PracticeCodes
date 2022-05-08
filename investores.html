@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h1{
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    #container{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap:30px;
+        width: 80%;
+        margin: auto;
+    }
+    #container > div{
+        
+        text-align: center;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        border-radius: 15px;
+    }
+    #container > div > p + img{
+        width: 40%;
+        margin-top:0px;
+    }
+    #container > div > p{
+        margin-bottom: 5px;
+    }
+    #container > div > img{
+        width: 100%;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+</style>
+<body>
+    <h1>Stategic Investors</h1>
+    <div id="container">
+
+    </div>
+</body>
+</html>
+<script>
+    var info=[{img:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",name:"Vijay Shekar Sharma",position:"Founder & CEO",company:"https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg"},
+              {img:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Rectangle_427_637d69bb57.png",name:"Kunal Shah",position:"Founder",company:"https://masai-website-images.s3.ap-south-1.amazonaws.com/cred_0a47d7b4f8.png"},
+              {img:"https://masai-website-images.s3.ap-south-1.amazonaws.com/amrish_rau_pine_labs_144e5e587c.jpg",name:"Amrish Rau",position:"CEO",company:"https://masai-website-images.s3.ap-south-1.amazonaws.com/pine_labs_0aa2407434.png"},
+              {img:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Sampad_swain_Instamojo_f12bf6341e.jpg",name:"Sampad Swain",position:"Co-Founder & CEO",company:"https://masai-website-images.s3.ap-south-1.amazonaws.com/instamojo_8763e704f7.png"}];
+
+    info.forEach(function(elem){
+
+        var box=document.createElement("div");
+        
+        var avatar=document.createElement("img");
+        avatar.setAttribute("src",elem.img);
+
+        var namee=document.createElement("h3");
+        namee.innerText=elem.name;
+
+        var role=document.createElement("p");
+        role.innerText=elem.position;
+
+        var logo=document.createElement("img");
+        logo.setAttribute("src",elem.company);
+
+        box.append(avatar,namee,role,logo);
+
+
+        document.querySelector("#container").append(box);
+
+    })
+</script>
